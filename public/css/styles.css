@@ -843,9 +843,9 @@ input[type='checkbox'] {
 /*************************/
 /*     07. Details 1     */
 /*************************/
-.basic-1 {
-	/* padding-top: 1.625rem;
-	padding-bottom: 3.75rem; */
+.basic-1 .basic-1 .text-container {
+	 padding-top:5rem;
+	/* padding-bottom: 3.75rem; */ 
 }
 
 .basic-1 .text-container {
@@ -1449,9 +1449,8 @@ input[type='checkbox'] {
 	padding-top: 1rem;
 	/* padding-bottom: 0.5rem; */
 }
-
-.footer .footer-col {
-	/* margin-bottom: 2.25rem; */
+.footer .row{
+	text-align: center;
 }
 
 .footer h4 {
@@ -1609,6 +1608,9 @@ a:hover.back-to-top {
 /*****************************/	
 /* Min-width width 768px */
 @media (min-width: 768px) {
+	.footer .footer-col{
+		text-align: center;
+	}
 	
 	/* General Styles */
 	.p-heading {
@@ -2140,18 +2142,15 @@ a:hover.back-to-top {
 
 
 	/* Footer */
-	.footer .footer-col {
+	/* .footer .footer-col {
 		width: 90%;
-	}
+	} */
 
-	.footer .footer-col.middle {
-		margin-right: auto;
-		margin-left: auto;
-	}
 
-	.footer .footer-col.last {
-		margin-right: 0;
-		margin-left: auto;
+	.footer .last  {
+		text-align: center !important;
+		/* margin-right: 0;
+		margin-left: auto; */
 	}
 	.footer .row {
 		flex-direction: row-reverse !important;

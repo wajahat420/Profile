@@ -105,7 +105,9 @@
                     <div class="col-lg-6">
                         <div class="text-container">
                             <h1><span class="turquoise">Web Developer</span></h1>
-                            <p class="p-large">Junior Web Developer</p>
+                            <p class="p-large">Assalam O Alikum, I am currently Studying in NED Universty in the field of Computer Science (BE).
+                                Currently I am in the seventh semester and Doing Internship in Cyber Security inside NED.
+                                I like to Work in Web Development but my passionate is in ReactJS.</p>
                             <a class="btn-solid-lg page-scroll" href="#info">DETAILS</a>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
@@ -124,7 +126,7 @@
     <!-- Details 1 -->
     <div id="info" class="basic-1">
         <div class="container">
-            <div class="row">
+            <div class="row basic-1">
                 <div class="col-lg-6">
                     <div class="text-container">
                         <h2>Help you in buisness growth</h2>
@@ -380,19 +382,15 @@
                 <div class="col-lg-6 m-auto">
                     
                     <!-- Contact Form -->
-                    <form id="contactForm" data-toggle="validator" data-focus="false">
-                        <!-- <div class="form-group">
-                            <input type="text" class="form-control-input" id="cname" required>
-                            <label class="label-control" for="cname">Name</label>
-                            <div class="help-block with-errors"></div>
-                        </div> -->
+                    <div  id="contactForm" data-toggle="validator" data-focus="false">
+                        
                         <div class="form-group">
-                            <input type="email" class="form-control-input" id="cemail" required>
+                            <input  type="email" class="form-control-input" id="cemail" required>
                             <label class="label-control" for="cemail">Company / Firm / Software House / Industry</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <textarea  class="form-control-textarea" id="cmessage" required></textarea>
                             <label class="label-control" for="cmessage">Your message</label>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -401,12 +399,12 @@
                             <div class="help-block with-errors"></div>
                         </div> -->
                         <div class="form-group">
-                            <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
+                            <button type="button" onclick="submit();return false" class="form-control-submit-button">SUBMIT MESSAGE</button>
                         </div>
                         <div class="form-message">
                             <div id="cmsgSubmit" class="h3 text-center hidden"></div>
                         </div>
-                    </form>
+                    </div>
                     <!-- end of contact form -->
 
                 </div> <!-- end of col -->
@@ -420,7 +418,7 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-5">
                     <div class="footer-col last">
                         <h4>Social Media</h4>
                         <span class="fa-stack">
@@ -457,8 +455,33 @@
     </div> <!-- end of copyright --> 
     <!-- end of copyright -->
     
-    	
+
     <!-- Scripts -->
+    <script>
+        // alert("d")
+        const msgID = document.getElementById("cmessage")
+        const nameID = document.getElementById("cemail")
+
+        function submit(){
+            const msg = msgID.value
+            const name = nameID.value
+            // $.post("http://localhost:5000/post",
+            $.ajax({
+                url: "/post",
+                type: "POST",
+                // dataType : "json",
+                // contentType: "application/json",
+                data: { 
+                    msg ,
+                    name
+                },
+                cache: false
+            })
+            msgID.value = ""
+            nameID.value = ""
+
+        }
+    </script>
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
