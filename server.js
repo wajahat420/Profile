@@ -49,28 +49,28 @@ app.use("/post",(req,res)=>{
 })
 
 // email 
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASS // naturally, replace both with your real credentials or an application-specific password
-    }
-  });
+// const transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//       user: process.env.EMAIL,
+//       pass: process.env.PASS // naturally, replace both with your real credentials or an application-specific password
+//     }
+//   });
   
-  const mailOptions = {
-    from: process.env.EMAIL,
-    to: 'sarwat4007473@cloud.neduet.edu.pk',
-    subject: 'Subject Of Mail',
-    text: 'Does this works???'
-  };
+//   const mailOptions = {
+//     from: process.env.EMAIL,
+//     to: 'sarwat4007473@cloud.neduet.edu.pk',
+//     subject: 'Subject Of Mail',
+//     text: 'Does this works???'
+//   };
   
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
+//   transporter.sendMail(mailOptions, function(error, info){
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log('Email sent: ' + info.response);
+//     }
+//   });
 
 const port = process.env.PORT || 5002
 // form-control-submit-button
